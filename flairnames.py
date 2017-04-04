@@ -4,6 +4,9 @@ flair_defaults_types = [
     "tapubulu-medal",
     "pikacup",
     "tapufini-medal",
+    "ovalcharm",
+    "shinycharm",
+    "aloladex-complete"
 ]
 
 flair_defaults = {
