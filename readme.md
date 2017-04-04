@@ -32,3 +32,14 @@ To add new flairs:
   - open GCP > console
      - cd to `pokemonflairbot/`
      - run `git pull; appcfg.py -A pokemonflairbot -V 8 update .`
+     
+---
+
+Whenever adding a new flair sheet, you must do the following:
+
+ - Update `sheets` in `flairgen.py`
+ - Update `sheet_source` in `flairgen.py`, use https
+ 
+Whenever modifying an existing flair sheet (uploaded a new version to reddit), you must do the following:
+
+ - Update `sheet_source` in `flairgen.py`, use https
