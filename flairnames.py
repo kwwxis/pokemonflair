@@ -713,6 +713,7 @@ flair_trainers = [
             ('tf-xy68', 1, 'Team Flare Admin - F'),
             #('tf-xy69', 1, 'Team Flare Boss - Lysander'),
             ('tf-xy69', 1, 'Photographer - Phil the Photo Guy'),
+            ('tf-xy70', 1, 'Pokemon Storage System Admin - Cassius'),
             #('tf-xy71', 1, 'Pokemon Trainer - AZ'),
         ],
     }),
