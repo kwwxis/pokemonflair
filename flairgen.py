@@ -78,7 +78,7 @@ TRAINER_SPRITE_HEIGHT = 3
 # list of spritesheets
 sheets        = ['kantoflair', 'johtoflair', 'hoennflair', 'sinnohflair', 'unovaflair', 'kalosflair',
                  'alolaflair', 'formsflair', 'megasflair', 'badgesflair',
-                 'smtrainerflair', 'xytrainerflair', 'orastrainerflair'
+                 'xytrainerflair', 'orastrainerflair', 'smtrainerflair',
                 ]
                  
 sheet_source  = [
@@ -93,10 +93,10 @@ sheet_source  = [
     'https://b.thumbs.redditmedia.com/PnQID7Ul-NR2HiieSz5tnpbYkoJyqkC8ZPyJLPOr5Wc.png', # formsflair
     'https://b.thumbs.redditmedia.com/V_o8SHUzm2ZbDY76IKSvBdyuaq6lhIIusAfyK3VxY7w.png', # megasflair
     'https://b.thumbs.redditmedia.com/J_xv88BigKNiZUW0GZmryY7DU-EVwMd0YmlqXD0aHCQ.png', # badgesflair
-    
-    'https://b.thumbs.redditmedia.com/Jc-yOXeoxS4CFyGfgCLOkCrR3q29mE46ydwNa3-1wOA.png', # smtrainerflair
+
     'https://b.thumbs.redditmedia.com/xYC4IRFRdMK2MnRXlokEJA4wP2BDC3Vyr25mcpL4G2s.png', # xytrainerflair
     'https://b.thumbs.redditmedia.com/dfVz8Q9ms7J5s0QiKFVtVdb0d7LDH1se7shq_Tu_qMo.png', # orastrainerflair
+    'https://b.thumbs.redditmedia.com/Jc-yOXeoxS4CFyGfgCLOkCrR3q29mE46ydwNa3-1wOA.png', # smtrainerflair
 ]
 
 # the number of pokemon in each region/sheet
