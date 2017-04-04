@@ -95,7 +95,7 @@ sheet_source  = [
     'https://b.thumbs.redditmedia.com/J_xv88BigKNiZUW0GZmryY7DU-EVwMd0YmlqXD0aHCQ.png', # badgesflair
     
     'https://b.thumbs.redditmedia.com/Jc-yOXeoxS4CFyGfgCLOkCrR3q29mE46ydwNa3-1wOA.png', # smtrainerflair
-    'https://b.thumbs.redditmedia.com/7MD7__iueALcIvpfDpVlscKs8xqEmk0T1uaQCGP3UYE.png', # xytrainerflair
+    'https://b.thumbs.redditmedia.com/xYC4IRFRdMK2MnRXlokEJA4wP2BDC3Vyr25mcpL4G2s.png', # xytrainerflair
     'https://b.thumbs.redditmedia.com/dfVz8Q9ms7J5s0QiKFVtVdb0d7LDH1se7shq_Tu_qMo.png', # orastrainerflair
 ]
 
