@@ -78,7 +78,7 @@ TRAINER_SPRITE_HEIGHT = 3
 # list of spritesheets
 sheets        = ['kantoflair', 'johtoflair', 'hoennflair', 'sinnohflair', 'unovaflair', 'kalosflair',
                  'alolaflair', 'formsflair', 'megasflair', 'badgesflair',
-                 'smtrainerflair', 'xytrainerflair'
+                 'smtrainerflair', 'xytrainerflair', 'orastrainerflair'
                 ]
                  
 sheet_source  = [
@@ -96,6 +96,7 @@ sheet_source  = [
     
     'https://b.thumbs.redditmedia.com/Jc-yOXeoxS4CFyGfgCLOkCrR3q29mE46ydwNa3-1wOA.png', # smtrainerflair
     'https://b.thumbs.redditmedia.com/7MD7__iueALcIvpfDpVlscKs8xqEmk0T1uaQCGP3UYE.png', # xytrainerflair
+    'https://b.thumbs.redditmedia.com/dfVz8Q9ms7J5s0QiKFVtVdb0d7LDH1se7shq_Tu_qMo.png', # orastrainerflair
 ]
 
 # the number of pokemon in each region/sheet
