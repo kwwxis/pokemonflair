@@ -94,8 +94,8 @@ sheet_source  = [
     'https://b.thumbs.redditmedia.com/V_o8SHUzm2ZbDY76IKSvBdyuaq6lhIIusAfyK3VxY7w.png', # megasflair
     'https://b.thumbs.redditmedia.com/J_xv88BigKNiZUW0GZmryY7DU-EVwMd0YmlqXD0aHCQ.png', # badgesflair
     
-    'https://b.thumbs.redditmedia.com/-dp0Flmv3DsUR_I1gi64ji-1tcPa33WWSmSSQSkHT7c.png', # smtrainerflair
-    'https://a.thumbs.redditmedia.com/gu-J-KeHvqzCQwGLMgYOgFIu15WLKIaumShUDakrcF0.png', # xytrainerflair
+    'https://b.thumbs.redditmedia.com/Jc-yOXeoxS4CFyGfgCLOkCrR3q29mE46ydwNa3-1wOA.png', # smtrainerflair
+    'https://b.thumbs.redditmedia.com/7MD7__iueALcIvpfDpVlscKs8xqEmk0T1uaQCGP3UYE.png', # xytrainerflair
 ]
 
 # the number of pokemon in each region/sheet
