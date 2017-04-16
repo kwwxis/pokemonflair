@@ -478,6 +478,7 @@ flair_defaults = {
     "MisirterE": "tapufini-medal",
     "Ardub23": "tapufini-medal",
     "Matanui3": "tapufini-medal",
+    "EeveeEmpress": "tapufini-medal",
 
     "OwenQuillion": "tapubulu-medal",
     "Ocolyctpsis": "tapubulu-medal",
@@ -522,6 +523,13 @@ flair_defaults = {
     "Pikadex": "tapubulu-medal",
     "Will-TVR": "tapubulu-medal",
     "Awkward_Torkoal": "tapubulu-medal",
+    "Y2A_Alkis": "tapubulu-medal",
+    "Thechoppergunner9": "tapubulu-medal",
+    "DeAvil87": "tapubulu-medal",
+    "AShadyCharacter": "tapubulu-medal",
+    "nickelbribe": "tapubulu-medal",
+    "Tomas229": "tapubulu-medal",
+    "sleuthyRogue": "tapubulu-medal",
 
     "The_Little_Thingy": "aloladex-complete",
     "dhnova": "aloladex-complete",
@@ -575,6 +583,13 @@ flair_defaults = {
     "HauntsYourProstate": "shinycharm",
     "Sorrica": "shinycharm",
     "anon14118": "shinycharm",
+    "Goldfinger_42": "shinycharm",
+    "Bobadad": "shinycharm",
+    "ProfessorLudibrolo": "shinycharm",
+    "Mindless_Enigma": "shinycharm",
+    "Z4ck0r": "shinycharm",
+    "What_A_Placeholder": "shinycharm",
+    "datsafish": "shinycharm",
 }
 
 flair_trainers = [
@@ -684,10 +699,10 @@ flair_trainers = [
         ],
         2: [
             ('tf-oras22', 1, 'Pokemon Maniac'),
-            ('tf-oras23', 1, 'Pokemon Breeder - M'),
-            ('tf-oras24', 1, 'Pokemon Breeder - F'),
-            ('tf-oras25', 1, 'Pokemon Ranger - M'),
-            ('tf-oras26', 1, 'Pokemon Ranger - F'),
+            ('tf-oras23', 1, 'Pokemon Ranger - M'),
+            ('tf-oras24', 1, 'Pokemon Ranger - F'),
+            ('tf-oras25', 1, 'Pokemon Breeder - M'),
+            ('tf-oras26', 1, 'Pokemon Breeder - F'),
             ('tf-oras27', 2, 'Street Thung (Punk) - M'),
             ('tf-oras28', 1, 'Street Thung (Punk) - F'),
             ('tf-oras29', 2, 'Rune Maniac'),
