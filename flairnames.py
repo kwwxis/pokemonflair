@@ -590,6 +590,8 @@ flair_defaults = {
     "Z4ck0r": "shinycharm",
     "What_A_Placeholder": "shinycharm",
     "datsafish": "shinycharm",
+
+    "Nintendo_America": "verified-account",
 }
 
 flair_trainers = [
