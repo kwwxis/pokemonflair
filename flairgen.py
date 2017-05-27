@@ -65,15 +65,21 @@ js_output = "/* FLAIR MASTER CONFIG | auto-generated at " + \
 FLAIR_WIDTH   = 40
 FLAIR_HEIGHT  = 32
 
-TRAINER_FLAIR_WIDTH = 50
-TRAINER_FLAIR_HEIGHT = 50
-
 # the number of sprites in a spritesheet row, and the max height of a spritesheet
 SPRITE_WIDTH  = 33
 SPRITE_HEIGHT = 6
 
-TRAINER_SPRITE_WIDTH = 26
+# trainer flairs
+TRAINER_SHEET_REAL_WIDTH = 1300 # the real width of every trainerflair spritesheet
+TRAINER_SHEET_SCALE_WIDTH = 1100 # the scale width (CHANGE ONLY THIS NUMBER FOR TRAINER FLAIRS)
+
+TRAINER_SPRITE_WIDTH = 26 # the number of cells allowed in one row
 TRAINER_SPRITE_HEIGHT = 3
+
+TRAINER_FLAIR_WIDTH  = round(float(TRAINER_SHEET_SCALE_WIDTH) / float(TRAINER_SPRITE_WIDTH), 3)
+TRAINER_FLAIR_HEIGHT = TRAINER_FLAIR_WIDTH
+
+TRAINER_FLAIR2_WIDTH = TRAINER_FLAIR_WIDTH / 2 * 3 # two cell
 
 # list of spritesheets
 sheets        = ['kantoflair', 'johtoflair', 'hoennflair', 'sinnohflair', 'unovaflair', 'kalosflair',
@@ -94,9 +100,9 @@ sheet_source  = [
     'https://b.thumbs.redditmedia.com/V_o8SHUzm2ZbDY76IKSvBdyuaq6lhIIusAfyK3VxY7w.png', # megasflair
     'https://b.thumbs.redditmedia.com/J_xv88BigKNiZUW0GZmryY7DU-EVwMd0YmlqXD0aHCQ.png', # badgesflair
 
-    'https://b.thumbs.redditmedia.com/xYC4IRFRdMK2MnRXlokEJA4wP2BDC3Vyr25mcpL4G2s.png', # xytrainerflair
-    'https://b.thumbs.redditmedia.com/dfVz8Q9ms7J5s0QiKFVtVdb0d7LDH1se7shq_Tu_qMo.png', # orastrainerflair
-    'https://b.thumbs.redditmedia.com/Jc-yOXeoxS4CFyGfgCLOkCrR3q29mE46ydwNa3-1wOA.png', # smtrainerflair
+    'https://b.thumbs.redditmedia.com/mGkHw6Agvunyh16bysnc1vHQmPfuQQ5ehC7nYSNAtOw.png', # xytrainerflair
+    'https://a.thumbs.redditmedia.com/ZV5rJzeHY3QE-L9HjNFVkwP3p7qffelEEtr6DkicBm8.png', # orastrainerflair
+    'https://b.thumbs.redditmedia.com/s3CNGoAFf9895Ef3x4rlOgeAU5o3d9-9ROsmiBXuzHM.png', # smtrainerflair
 ]
 
 # the number of pokemon in each region/sheet
@@ -110,6 +116,25 @@ counts = [
         72,  # kalosflair
         81   # alolaflair
     ]
+
+# DETERMINE LEFT OFFSET POSITIONING
+# ------------------------------------------------------------------------------------------
+
+FLAIR_OFFSET_COMMENT     = 67
+FLAIRTEXT_OFFSET_COMMENT = 114
+FLAIRBALL_OFFSET_COMMENT = 312
+
+FLAIR_OFFSET_LINK       = 145
+FLAIRTEXT_OFFSET_LINK = FLAIRTEXT_OFFSET_COMMENT + (FLAIR_OFFSET_LINK - FLAIR_OFFSET_COMMENT)
+FLAIRBALL_OFFSET_LINK = FLAIRBALL_OFFSET_COMMENT + (FLAIR_OFFSET_LINK - FLAIR_OFFSET_COMMENT)
+
+output += '.comment .flair { left: '+str(FLAIR_OFFSET_COMMENT)+'px }'
+output += '.link .flair { left: '+str(FLAIR_OFFSET_LINK)+'px }'
+
+# changing COMMENT to LINK will give the same result for these 2 lines below
+output += '.flair:before { left:'+str(FLAIRTEXT_OFFSET_COMMENT - FLAIR_OFFSET_COMMENT)+'px}'
+output += '.flair:after { left:'+str(FLAIRBALL_OFFSET_COMMENT - FLAIR_OFFSET_COMMENT)+'px}'
+
 
 # GENERATE CSS
 # ------------------------------------------------------------------------------------------
@@ -135,6 +160,22 @@ for i in range(0, SPRITE_HEIGHT):
 output += "\n"
 
 # Trainer
+output += '.flair.flair-tf{'
+output += 'background-size: '+str(TRAINER_SHEET_SCALE_WIDTH)+'px auto !important;'
+output += 'width:'+str(TRAINER_FLAIR_WIDTH)+'px;'
+output += 'height:'+str(TRAINER_FLAIR_HEIGHT)+'px;'
+output += '}'
+
+TRAINER_FLAIR_OFFSET = abs(TRAINER_FLAIR_WIDTH - TRAINER_FLAIR2_WIDTH)
+output += '.flair.flair-tf.flair-tf2{'
+output += 'width:'+str(TRAINER_FLAIR2_WIDTH)+'px;'
+output += 'margin-left:-'+str(TRAINER_FLAIR_OFFSET)+'px;'
+output += '}'
+output += '.flair.flair-tf.flair-tf2:before, .flair.flair-tf.flair-tf2:after {'
+output += 'margin-left:'+str(TRAINER_FLAIR_OFFSET)+'px;'
+output += '}'
+
+
 for i in range(0, TRAINER_SPRITE_HEIGHT):
     for j in range(0, TRAINER_SPRITE_WIDTH):
         if (i == 0 and j == 0):
@@ -153,8 +194,11 @@ for i in range(0, TRAINER_SPRITE_HEIGHT):
     output += "\n"
     
 output += "\n"
+
+# sync output_source and output
 output_source = output
 
+# Sheets
 i = 0
 for sheet in sheets:
     output += '.flair-'+sheet+'{background-image:url(%%'+sheet+'%%) !important}'
@@ -164,6 +208,9 @@ for sheet in sheets:
     output_source += "\n"
     
     i += 1
+
+# Extra Sheets (no need to append to output_source)
+output += '.flair-modtrainerflair { background-image:url(%%modtrainerflair%%) !important}'
     
 with open('./flair.css', 'w+') as outfile:
     outfile.seek(0)
