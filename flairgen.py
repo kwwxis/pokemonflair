@@ -94,11 +94,11 @@ sheet_source  = [
     'https://a.thumbs.redditmedia.com/uUdeRePNs4Kd-Qp6tRP4-GS4dalckILg5K0YRcHRfK8.png', # sinnohflair
     'https://b.thumbs.redditmedia.com/X-oLepVJ2SfUeyFhQ8MY-zEEAYDErjGz6ldsQHay5SQ.png', # unovaflair
     'https://b.thumbs.redditmedia.com/K0gWNad-nSUg4xnFnD3uDyEraSPMwmltI_9DFiWlRIo.png', # kalosflair
-    
-    'https://b.thumbs.redditmedia.com/WepmgA-MliysLGLOjnx3jhOXnz0sGwU77kqbTihqHQU.png', # alolaflair
-    'https://b.thumbs.redditmedia.com/PnQID7Ul-NR2HiieSz5tnpbYkoJyqkC8ZPyJLPOr5Wc.png', # formsflair
+    'https://b.thumbs.redditmedia.com/-90NsghU1NmSDkBUKbPXUwR0wXV0QpxiMzCM5g3rSKw.png', # alolaflair
+
+    'https://b.thumbs.redditmedia.com/7P2ccleOuhUg_OOxRQBQNZ9_zEtGAPs4xolwusf0H5k.png', # formsflair
     'https://b.thumbs.redditmedia.com/V_o8SHUzm2ZbDY76IKSvBdyuaq6lhIIusAfyK3VxY7w.png', # megasflair
-    'https://b.thumbs.redditmedia.com/J_xv88BigKNiZUW0GZmryY7DU-EVwMd0YmlqXD0aHCQ.png', # badgesflair
+    'https://b.thumbs.redditmedia.com/TrB7uTji8dtOKUKn78rAFfhBPKz4PRmGvj61vbh8LiU.png', # badgesflair
 
     'https://b.thumbs.redditmedia.com/mGkHw6Agvunyh16bysnc1vHQmPfuQQ5ehC7nYSNAtOw.png', # xytrainerflair
     'https://a.thumbs.redditmedia.com/ZV5rJzeHY3QE-L9HjNFVkwP3p7qffelEEtr6DkicBm8.png', # orastrainerflair
@@ -114,7 +114,7 @@ counts = [
         107, # sinnohflair
         156, # unovaflair
         72,  # kalosflair
-        81   # alolaflair
+        86   # alolaflair
     ]
 
 # DETERMINE LEFT OFFSET POSITIONING
