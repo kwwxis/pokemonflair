@@ -7,6 +7,8 @@ from flairnames import *
 
 output = ''
 output_source = ''
+
+# This is a string that will be pasted into the output JS file.
 load_by_id = """
     for (var key in flair.names) {
         if (flair.names.hasOwnProperty(key)) {
@@ -61,31 +63,27 @@ js_output = "/* FLAIR MASTER CONFIG | auto-generated at " + \
 # SETTINGS
 # ------------------------------------------------------------------------------------------
 
-# the width and height of an individual sprite in pixels
-FLAIR_WIDTH   = 40
-FLAIR_HEIGHT  = 32
+# Pokemon Flair
+FLAIR_WIDTH   = 40 # pixel width of a flair cell
+FLAIR_HEIGHT  = 32 # pixel height of a flair cell
+SPRITE_WIDTH  = 33 # the number of cells allowed in one row
+SPRITE_HEIGHT = 6 # the number of cells allowed in one column
 
-# the number of sprites in a spritesheet row, and the max height of a spritesheet
-SPRITE_WIDTH  = 33
-SPRITE_HEIGHT = 6
-
-# trainer flairs
+# Trainer Flair
 TRAINER_SHEET_REAL_WIDTH = 1300 # the real width of every trainerflair spritesheet
 TRAINER_SHEET_SCALE_WIDTH = 1100 # the scale width (CHANGE ONLY THIS NUMBER FOR TRAINER FLAIRS)
-
 TRAINER_SPRITE_WIDTH = 26 # the number of cells allowed in one row
-TRAINER_SPRITE_HEIGHT = 3
-
+TRAINER_SPRITE_HEIGHT = 3 # the number of cells allowed in one column
 TRAINER_FLAIR_WIDTH  = round(float(TRAINER_SHEET_SCALE_WIDTH) / float(TRAINER_SPRITE_WIDTH), 3)
 TRAINER_FLAIR_HEIGHT = TRAINER_FLAIR_WIDTH
-
 TRAINER_FLAIR2_WIDTH = TRAINER_FLAIR_WIDTH / 2 * 3 # two cell
 
-# list of spritesheets
-sheets        = ['kantoflair', 'johtoflair', 'hoennflair', 'sinnohflair', 'unovaflair', 'kalosflair',
-                 'alolaflair', 'formsflair', 'megasflair', 'badgesflair',
-                 'xytrainerflair', 'orastrainerflair', 'smtrainerflair',
-                ]
+# List of Spritesheets
+sheets = [
+    'kantoflair', 'johtoflair', 'hoennflair', 'sinnohflair', 'unovaflair', 'kalosflair',
+    'alolaflair', 'galarflair', 'formsflair', 'megasflair', 'badgesflair',
+    'xytrainerflair', 'orastrainerflair', 'smtrainerflair',
+    ]
                  
 sheet_source  = [
     'https://b.thumbs.redditmedia.com/QemyaKTfPe2PGWKZ1ALoVELcwaU7it6KAexjGeXKYsQ.png', # kantoflair
@@ -94,15 +92,16 @@ sheet_source  = [
     'https://a.thumbs.redditmedia.com/uUdeRePNs4Kd-Qp6tRP4-GS4dalckILg5K0YRcHRfK8.png', # sinnohflair
     'https://b.thumbs.redditmedia.com/X-oLepVJ2SfUeyFhQ8MY-zEEAYDErjGz6ldsQHay5SQ.png', # unovaflair
     'https://b.thumbs.redditmedia.com/K0gWNad-nSUg4xnFnD3uDyEraSPMwmltI_9DFiWlRIo.png', # kalosflair
-    'https://b.thumbs.redditmedia.com/-90NsghU1NmSDkBUKbPXUwR0wXV0QpxiMzCM5g3rSKw.png', # alolaflair
+    'https://b.thumbs.redditmedia.com/t5Iw-YM410lzIpnW-fT8X6o7Ncg1ynBJMY7yYKbMtzI.png', # alolaflair
+    'https://b.thumbs.redditmedia.com/EhfBIQtycSWUXwk8wpMC-LIf5BuzPOpBKG9qr-38H5Q.png', # galarflair
 
     'https://b.thumbs.redditmedia.com/7P2ccleOuhUg_OOxRQBQNZ9_zEtGAPs4xolwusf0H5k.png', # formsflair
     'https://b.thumbs.redditmedia.com/V_o8SHUzm2ZbDY76IKSvBdyuaq6lhIIusAfyK3VxY7w.png', # megasflair
     'https://b.thumbs.redditmedia.com/TrB7uTji8dtOKUKn78rAFfhBPKz4PRmGvj61vbh8LiU.png', # badgesflair
 
-    'https://b.thumbs.redditmedia.com/mGkHw6Agvunyh16bysnc1vHQmPfuQQ5ehC7nYSNAtOw.png', # xytrainerflair
-    'https://a.thumbs.redditmedia.com/ZV5rJzeHY3QE-L9HjNFVkwP3p7qffelEEtr6DkicBm8.png', # orastrainerflair
-    'https://b.thumbs.redditmedia.com/s3CNGoAFf9895Ef3x4rlOgeAU5o3d9-9ROsmiBXuzHM.png', # smtrainerflair
+    'https://a.thumbs.redditmedia.com/rx-m1zj1pVvi454mmqi-47ep4FejUGbmvN_EQznBN68.png', # xytrainerflair
+    'https://b.thumbs.redditmedia.com/uo2FwX_j2sqPkixsy1jmDSv29-1qiEe1NiccMW7Eowo.png', # orastrainerflair
+    'https://b.thumbs.redditmedia.com/2CXPDBGX14k_AY06VjMShg-xDg9bds5p6En-coxjuGk.png', # smtrainerflair
 ]
 
 # the number of pokemon in each region/sheet
@@ -114,7 +113,8 @@ counts = [
         107, # sinnohflair
         156, # unovaflair
         72,  # kalosflair
-        86   # alolaflair
+        88,  # alolaflair
+        81   # galarflair
     ]
 
 # DETERMINE LEFT OFFSET POSITIONING
@@ -139,79 +139,54 @@ output += '.flair:after { left:'+str(FLAIRBALL_OFFSET_COMMENT - FLAIR_OFFSET_COM
 # GENERATE CSS
 # ------------------------------------------------------------------------------------------
 
-# Pokemon
+# Pokemon Flair
+# ~~~~~~~~~~~~~
 for i in range(0, SPRITE_HEIGHT):
     for j in range(0, SPRITE_WIDTH):
-        if (i == 0 and j == 0):
-            output += '.flair-0-0{background-position:0 0}'
-            continue
-        
-        x = '-' + str(j * FLAIR_WIDTH) + 'px'
-        y = '-' + str(i * FLAIR_HEIGHT) + 'px'
-        
-        if (j == 0):
-            x = '0'
-        if (i == 0):
-            y = '0'
-        
-        output += '.flair-' + str(i) + '-' + str(j) + '{background:' + x + ' ' + y + '}'
+        prop = 'background-position' if i == 0 and j == 0 else 'background'
+        x = '0' if j == 0 else '-' + str(j*100) + '%'
+        y = '0' if i == 0 else '-' + str(i*100) + '%'
+        output += '.flair-' + str(i) + '-' + str(j) + '{'+prop+':'+x+' '+y+'}'
     output += "\n"
-    
 output += "\n"
 
-# Trainer
+# Trainer Flair
+# ~~~~~~~~~~~~~
 output += '.flair.flair-tf{'
 output += 'background-size: '+str(TRAINER_SHEET_SCALE_WIDTH)+'px auto !important;'
 output += 'width:'+str(TRAINER_FLAIR_WIDTH)+'px;'
 output += 'height:'+str(TRAINER_FLAIR_HEIGHT)+'px;'
 output += '}'
+output += "\n"
 
+# Trainer-2 Flair
+# ~~~~~~~~~~~~~~~
 TRAINER_FLAIR_OFFSET = abs(TRAINER_FLAIR_WIDTH - TRAINER_FLAIR2_WIDTH)
 output += '.flair.flair-tf.flair-tf2{'
-output += 'width:'+str(TRAINER_FLAIR2_WIDTH)+'px;'
+output += 'padding-right:'+str(TRAINER_FLAIR_OFFSET)+'px;'
 output += 'margin-left:-'+str(TRAINER_FLAIR_OFFSET)+'px;'
+output += 'background-origin: content-box;'
 output += '}'
 output += '.flair.flair-tf.flair-tf2:before, .flair.flair-tf.flair-tf2:after {'
 output += 'margin-left:'+str(TRAINER_FLAIR_OFFSET)+'px;'
 output += '}'
 
-
-for i in range(0, TRAINER_SPRITE_HEIGHT):
-    for j in range(0, TRAINER_SPRITE_WIDTH):
-        if (i == 0 and j == 0):
-            output += '.flair-0-0.flair-tf{background-position:0 0}'
-            continue
-        
-        x = '-' + str(j * TRAINER_FLAIR_WIDTH) + 'px'
-        y = '-' + str(i * TRAINER_FLAIR_HEIGHT) + 'px'
-        
-        if (j == 0):
-            x = '0'
-        if (i == 0):
-            y = '0'
-        
-        output += '.flair-' + str(i) + '-' + str(j) + '.flair-tf{background:' + x + ' ' + y + '}'
-    output += "\n"
-    
-output += "\n"
-
-# sync output_source and output
+# Copy 'output' to 'output_source'
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 output_source = output
 
 # Sheets
-i = 0
-for sheet in sheets:
-    output += '.flair-'+sheet+'{background-image:url(%%'+sheet+'%%) !important}'
-    output += "\n"
-    
-    output_source += '.flair-'+sheet+'{background-image:url('+sheet_source[i]+') !important}'
-    output_source += "\n"
-    
-    i += 1
+# ~~~~~~
+for idx, sheet in enumerate(sheets):
+    output += '.flair-'+sheet+'{background-image:url(%%'+sheet+"%%) !important}\n"
+    output_source += '.flair-'+sheet+'{background-image:url('+sheet_source[idx]+") !important}\n"
 
-# Extra Sheets (no need to append to output_source)
+# Extra Sheets (no need to append to 'output_source')
 output += '.flair-modtrainerflair { background-image:url(%%modtrainerflair%%) !important}'
-    
+
+# Write to output
+# ~~~~~~~~~~~~~~~
+
 with open('./flair.css', 'w+') as outfile:
     outfile.seek(0)
     outfile.write(output)
@@ -230,19 +205,22 @@ with open('../rpokemon.github.io/flair.css', 'w+') as outfile:
 # GENERATE FLAIR.JS
 # ------------------------------------------------------------------------------------------
 
+# Default Types
+# ~~~~~~~~~~~~~
 js_output += 'flair.default_types = [' + "\n"
 for default_type in flair_defaults_types:
     js_output += "    '" + default_type + "',\n"
-
 js_output += '];' + "\n"
 
+# Defaults
+# ~~~~~~~~
 js_output += 'flair.defaults = {' + "\n"
 for user, flair in flair_defaults.items():
-    js_output += '    "'+user+'": "'+flair+'",'
-    js_output += "\n"
-
+    js_output += '    "'+user+'": "'+flair+'",'+"\n"
 js_output += '};' + "\n"
 
+# Names
+# ~~~~~
 js_output += 'flair.names = {' + "\n"
 js_output += "/* [STANDARD] */\n"
 
