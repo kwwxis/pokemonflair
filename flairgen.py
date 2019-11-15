@@ -182,7 +182,7 @@ for idx, sheet in enumerate(sheets):
     output_source += '.flair-'+sheet+'{background-image:url('+sheet_source[idx]+") !important}\n"
 
 # Extra Sheets (no need to append to 'output_source')
-output += '.flair-modtrainerflair { background-image:url(%%modtrainerflair%%) !important}'
+output += '.flair-modtrainerflair { background-image:url(%%mtf%%) !important}'
 
 # Write to output
 # ~~~~~~~~~~~~~~~
